@@ -669,7 +669,7 @@ overrides: !ruby/object:Overrides::ResourceOverrides
           {{description}}* `snapshot`
       type: !ruby/object:Overrides::Terraform::PropertyOverride
         custom_flatten: 'templates/terraform/custom_flatten/name_from_self_link.erb'
-        default_value: 'pd-standard'
+        default_value: 'pd-balanced'
       name: !ruby/object:Overrides::Terraform::PropertyOverride
         input: true
       licenses: !ruby/object:Overrides::Terraform::PropertyOverride
@@ -680,6 +680,15 @@ overrides: !ruby/object:Overrides::ResourceOverrides
         required: false
         default_from_api: true
         custom_flatten: 'templates/terraform/custom_flatten/name_from_self_link.erb'
+      confidentialComputingServices: !ruby/object:Overrides::Terraform::PropertyOverride
+        required: false
+        default_from_api: true
+      storagePool: !ruby/object:Overrides::Terraform::PropertyOverride
+        required: false
+        default_from_api: true
+      provisionedThroughput: !ruby/object:Overrides::Terraform::PropertyOverride
+        required: false
+        default_from_api: true
       provisionedIops: !ruby/object:Overrides::Terraform::PropertyOverride
         required: false
         default_from_api: true
