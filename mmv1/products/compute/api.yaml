@@ -3375,21 +3375,18 @@ objects:
     collection_url_key: 'items'
     has_self_link: true
     description: |
-      Persistent disks are durable storage devices that function similarly to
-      the physical disks in a desktop or a server. Compute Engine manages the
-      hardware behind these devices to ensure data redundancy and optimize
-      performance for you. Persistent disks are available as either standard
-      hard disk drives (HDD) or solid-state drives (SSD).
+      Persistent Disk and Hyperdisk volumes are durable storage devices that 
+      function similarly to the physical disks in a desktop or a server. 
+      Compute Engine manages the hardware behind these devices to ensure data 
+      redundancy and optimize performance for you. 
 
-      Persistent disks are located independently from your virtual machine
-      instances, so you can detach or move persistent disks to keep your data
-      even after you delete your instances. Persistent disk performance scales
-      automatically with size, so you can resize your existing persistent disks
-      or add more persistent disks to an instance to meet your performance and
-      storage space requirements.
+      Disks are located independently from your virtual machine
+      instances, so you can detach or move  disks to keep your data
+      even after you delete your instances. 
 
-      Add a persistent disk to your instance when you need reliable and
-      affordable storage with consistent performance characteristics.
+      Add a Persistent Disk or Hyperdisk volumes to your instance when 
+      you need reliable and affordable storage with consistent 
+      performance characteristics.
     references: !ruby/object:Api::Resource::ReferenceLinks
       guides:
         'Adding a persistent disk':
@@ -3717,6 +3714,20 @@ objects:
         description: |
           Indicates whether or not the disk can be read/write attached to more than one instance.
         min_version: beta
+      - !ruby/object:Api::Type::Boolean
+        name: 'confidentialComputingServices'
+        description: |
+          Indicates whether or not the disk has Confidential Computing Services enabled or not.
+        min_version: beta
+      - !ruby/object:Api::Type::String
+        name: 'storagePool'
+        description: |
+          If specified, indicates which Storage Pool the disk should be created in.
+        min_version: beta
+      - !ruby/object:Api::Type::Integer
+        name: 'provisionedThroughput'
+        description: |
+          Indicates how much throughput (MB/s) must be provisioned for the disk.
       - !ruby/object:Api::Type::Integer
         name: 'provisionedIops'
         description: |
